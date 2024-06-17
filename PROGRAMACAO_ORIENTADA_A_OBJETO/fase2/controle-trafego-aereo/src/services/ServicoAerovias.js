@@ -1,10 +1,16 @@
+const Aerovia = require("../models/Aerovia");
+
 class ServicoAerovias {
   constructor() {
     this.aerovias = [];
   }
 
   adicionarAerovia(aerovia) {
-    this.aerovias.push(aerovia);
+    if (aerovia instanceof Aerovia) {
+      this.aerovias.push(aerovia);
+    } else {
+      throw new Error("O objeto não é uma instância de Aerovia");
+    }
   }
 
   recuperarAeroviaPorIdentificador(identificador) {
@@ -14,7 +20,12 @@ class ServicoAerovias {
   }
 
   listarAerovias() {
-    return this.aerovias;
+    return this.aerovias.map((aerovia) => ({
+      identificador: aerovia.identificador,
+      aeroportoOrigem: aerovia.aeroportoOrigem,
+      aeroportoDestino: aerovia.aeroportoDestino,
+      tamanho: aerovia.tamanho,
+    }));
   }
 }
 

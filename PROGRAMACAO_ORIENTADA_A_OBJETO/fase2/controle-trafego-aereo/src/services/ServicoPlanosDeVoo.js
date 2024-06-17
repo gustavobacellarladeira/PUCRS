@@ -7,6 +7,7 @@ class ServicoPlanosDeVoo {
     this.servicoPilotos = servicoPilotos;
     this.servicoAeronaves = servicoAeronaves;
     this.servicoAerovias = servicoAerovias;
+    this.slotsOcupados = {}; // Inicializar estrutura para armazenar slots ocupados
   }
 
   aprovarPlanoDeVoo(
@@ -75,10 +76,21 @@ class ServicoPlanosDeVoo {
       altitude,
       slotsOcupados
     );
+
     this.planos.push(plano);
     this.marcarSlotsOcupados(aerovia, data, slotsOcupados, altitude);
 
-    return plano;
+    // Retorna uma cópia do plano, apenas com propriedades públicas
+    return {
+      id: plano.id,
+      matriculaPiloto: plano.matriculaPiloto,
+      prefixoAeronave: plano.prefixoAeronave,
+      data: plano.data,
+      horario: plano.horario,
+      aerovia: plano.aerovia,
+      altitude: plano.altitude,
+      slotsOcupados: plano.slotsOcupados,
+    };
   }
 
   recuperarPlanoPorId(id) {
@@ -94,6 +106,7 @@ class ServicoPlanosDeVoo {
     );
     return slots;
   }
+
   verificarDisponibilidade(aerovia, data, slotsOcupados, altitude) {
     if (!this.slotsOcupados[aerovia]) {
       this.slotsOcupados[aerovia] = {};

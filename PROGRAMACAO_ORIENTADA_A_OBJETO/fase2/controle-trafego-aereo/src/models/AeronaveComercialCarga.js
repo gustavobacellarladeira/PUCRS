@@ -1,17 +1,9 @@
 const Aeronave = require("./Aeronave");
 
-class AeronaveComercialCarga extends Aeronave {
-  constructor(
-    prefixo,
-    velocidadeCruzeiro,
-    autonomia,
-    companhiaAerea,
-    capacidadeCarga
-  ) {
-    super(prefixo, "ComercialCarga", velocidadeCruzeiro, autonomia);
-    this.companhiaAerea = companhiaAerea;
-    this.capacidadeCarga = capacidadeCarga;
+class AeronaveComercial extends Aeronave {
+  constructor(prefixo, tipo, velocidadeCruzeiro, autonomia) {
+    super(prefixo, tipo, velocidadeCruzeiro, autonomia);
   }
 }
 
-module.exports = AeronaveComercialCarga;
+module.exports = AeronaveComercial;

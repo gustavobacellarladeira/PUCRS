@@ -19,10 +19,11 @@ Menu:
 1. Opção 1: Listar pilotos
 2. Opção 2: Listar aeronaves
 3. Opção 3: Listar aerovias
-4. Sair
+4. Opção 4: Aprovar plano de voo ( 123 - PT-ABC - 14:00 - POA-RJ - 26000 - 35000 )
+5. Opção 5: Sair
 
-5. **Selecionar uma Opção**: Você pode selecionar uma opção digitando o número correspondente e pressionando Enter.
+6. **Selecionar uma Opção**: Você pode selecionar uma opção digitando o número correspondente e pressionando Enter.
 
-6. **Visualizar Resultados**: Dependendo da opção selecionada, o sistema mostrará uma lista de pilotos, aeronaves ou aerovias com informações detalhadas.
+7. **Visualizar Resultados**: Dependendo da opção selecionada, o sistema mostrará uma lista de pilotos, aeronaves ou aerovias com informações detalhadas.
 
-7. **Sair do Sistema**: Para sair do sistema, basta selecionar a opção "0" no menu.
+8. **Sair do Sistema**: Para sair do sistema, basta selecionar a opção "0" no menu.
